@@ -1,65 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import './Calculadora.css';
 import * as calc from '../actions/calculos';
 import Casa from './Casa';
+import Form from './Form';
+import { userContext } from '../context/user-context';
 
 const { casa, sumar, nombreArray, alma, personalidad } = calc;
 
-const Calculadora = () => {
-  const [user, setUser] = useState({
-    name: '',
-    day: '',
-    month: '',
-    year: '',
-  });
-  const { name, day, month, year } = user;
-  const cmv = day + month + sumar(year);
+const Calculadora = (props) => {
+  const user = useContext(userContext).user;
 
+  const { name, day, month, year } = user;
+
+  const cmv = day + month + sumar(year);
   const cmvTotal = sumar(cmv);
   const nombreTotal = nombreArray(name.toLowerCase());
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setUser((prevUser) => {
-      return {
-        ...prevUser,
-        [name]: value,
-      };
-    });
-  };
-
   return (
     <div>
-      <form action=''>
-        <input
-          onChange={handleInputChange}
-          value={user.name}
-          name='name'
-          type='text'
-          placeholder='Name'
-        />
-        <input
-          onChange={handleInputChange}
-          value={user.day}
-          name='day'
-          type='number'
-          placeholder='Dia'
-        />
-        <input
-          onChange={handleInputChange}
-          value={user.month}
-          name='month'
-          type='number'
-          placeholder='Mes'
-        />
-        <input
-          onChange={handleInputChange}
-          value={user.year}
-          name='year'
-          type='number'
-          placeholder='Año'
-        />
-      </form>
+      <Form />
       <h1>{name}</h1>
       <p>CMV - {cmvTotal}</p>
       <p>Fuerza - {calc.sumar(day + month)}</p>

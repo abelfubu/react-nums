@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import * as calc from '../actions/calculos';
 import Casa from './Casa';
 import Letra from './Letra';
 import Form from './Form';
 import { userContext } from '../context/user-context';
-import { Grid, Typography, Container, Button, Box } from '@material-ui/core';
+import { Grid, Typography, Container, Box } from '@material-ui/core';
 
 const { casa, sumar, nombreArray, alma, personalidad, definirNumero } = calc;
 
@@ -12,15 +12,12 @@ const Calculadora = (props) => {
   const updateUser = useContext(userContext).update;
   const user = useContext(userContext).user;
   const { name, day, month, year } = user;
-  const [zoomin, setZoomin] = useState(false);
+
   const cmv = day + month + sumar(year);
   const cmvTotal = sumar(cmv);
   const nombreTotal = nombreArray(name.toLowerCase());
   const nombreM = nombreArray(name);
-  const handleClick = () => {
-    console.log(zoomin);
-    setZoomin((prevValue) => !prevValue);
-  };
+
   const handleDeletion = (index) => {
     nombreM.splice(index, index + 1);
     updateUser((prevUser) => {
@@ -45,10 +42,6 @@ const Calculadora = (props) => {
 
   return (
     <div className='bg'>
-      {/* <Button variant='outlined' color='primary' onClick={handleClick}>
-        Hello
-      </Button> */}
-
       <Container maxWidth='lg'>
         <Form />
         {letra}

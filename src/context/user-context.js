@@ -11,11 +11,13 @@ export default (props) => {
     day: '',
     month: '',
     year: '',
+    type: 'light',
   });
 
   const updateUser = (user) => {
     setUserData(user);
   };
+
   return (
     <userContext.Provider value={{ user: userData, update: updateUser }}>
       {props.children}

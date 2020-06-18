@@ -43,7 +43,7 @@ function App() {
                   color='primary'
                   style={{ fontSize: '8rem' }}
                 />
-                <Typography gutterBottom color='inherit' variant='body1'>
+                <Typography gutterBottom color='inherit' variant='subtitle1'>
                   Pitágoras afirmó aquello de «Todo es número», donde por número
                   se refería a los números naturales (1, 2, 3…), dando a
                   entender que todo el Universo, desde la música hasta el

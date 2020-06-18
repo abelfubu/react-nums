@@ -54,47 +54,47 @@ const Calculadora = (props) => {
             <Casa
               grid='4'
               casa='Casa 1'
-              numero={casa('a', 'j', 's', nombreTotal).length}
+              numero={casa('a', 'j', 's', null, nombreTotal).length}
             />
             <Casa
               grid='4'
               casa='Casa 2'
-              numero={casa('b', 'k', 't', nombreTotal).length}
+              numero={casa('b', 'k', 't', null, nombreTotal).length}
             />
             <Casa
               grid='4'
               casa='Casa 3'
-              numero={casa('c', 'l', 'u', nombreTotal).length}
+              numero={casa('c', 'l', 'u', 'ç', nombreTotal).length}
             />
             <Casa
               grid='4'
               casa='Casa 4'
-              numero={casa('d', 'm', 'v', nombreTotal).length}
+              numero={casa('d', 'm', 'v', null, nombreTotal).length}
             />
             <Casa
               grid='4'
               casa='Casa 5'
-              numero={casa('e', 'n', 'w', nombreTotal).length}
+              numero={casa('e', 'n', 'w', 'ñ', nombreTotal).length}
             />
             <Casa
               grid='4'
               casa='Casa 6'
-              numero={casa('f', 'o', 'x', nombreTotal).length}
+              numero={casa('f', 'o', 'x', null, nombreTotal).length}
             />
             <Casa
               grid='4'
               casa='Casa 7'
-              numero={casa('g', 'p', 'y', nombreTotal).length}
+              numero={casa('g', 'p', 'y', null, nombreTotal).length}
             />
             <Casa
               grid='4'
               casa='Casa 8'
-              numero={casa('h', 'q', 'z', nombreTotal).length}
+              numero={casa('h', 'q', 'z', null, nombreTotal).length}
             />
             <Casa
               grid='4'
               casa='Casa 9'
-              numero={casa('i', 'r', null, nombreTotal).length}
+              numero={casa('i', 'r', null, null, nombreTotal).length}
             />
           </Grid>
           <Grid container item lg={6}>

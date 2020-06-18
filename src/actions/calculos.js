@@ -39,8 +39,10 @@ export const personalidad = (nombre) =>
       letras !== ' ',
   );
 
-export const casa = (a, b, c, nombre) =>
-  nombre.filter((letras) => letras === a || letras === b || letras === c);
+export const casa = (a, b, c, d, nombre) =>
+  nombre.filter(
+    (letras) => letras === a || letras === b || letras === c || letras === d,
+  );
 
 export const convertidorLetrasNumeros = (nombre) => {
   let nombreConvertido = 0;
